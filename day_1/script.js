@@ -16,8 +16,14 @@ upvoteBox.addEventListener('click', function () {
 
     if (this.classList.contains('active')) {
         upvoteCount += 1;
+        if (this.classList.contains('inactive')) {
+            this.classList.remove('inactive');
+        }
     } else {
         upvoteCount -= 1;
+        if (!this.classList.contains('inactive')) {
+            this.classList.add('inactive');
+        }
     }
 
     const upvoteCountStr = upvoteCount.toString();
