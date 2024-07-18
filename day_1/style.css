@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+* {
+    transition: all ease;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.upvote-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2px;
+    border: 1px solid #959DA5;
+    border-radius: 8px;
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
+}
+
+.arrow {
+    stroke: #0D0D0D;
+}
+
+.upvote-box:hover {
+    border-color: #6FCF97;
+}
+
+.upvote-box:hover .arrow-container {
+    background-color:#E2F5EA;
+}
+
+.upvote-box:hover .arrow-container .arrow {
+    transform: translateY(-2px);
+    stroke: #00AA45;
+}
+
+.arrow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    overflow: hidden;
+}
+
+.upvote-count {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+}
+
+.upvote-box.active {
+    border-color: #6FCF97;
+}
+.upvote-box.active .arrow-container .arrow {
+    fill: #6FCF97;
+    stroke: #00AA45;
+    animation: arrowFromBottom 0.1s ease-in-out;
+}
+.upvote-box.active .upvote-count {
+    color: #00AA45;
+}
+
+.upvote-box.active:hover {
+    box-shadow: 0px 0px 0px 4px rgba(0, 170, 69, 0.15);
+}
+
+.upvote-count {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    transition: color 0.3s ease;
+    position: relative;
+    /* overflow: hidden; */
+    height: 14px; /* Adjust based on font size */
+}
+
+.upvote-digit {
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+}
+
+@keyframes arrowFromBottom {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes arrowToTop {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100%); }
+}
+
+.digit-up {
+    animation: arrowFromBottom 0.5s ease-in-out;
+}
+
+.digit-down {
+    animation: arrowToTop 0.5s ease-in-out;
+}
