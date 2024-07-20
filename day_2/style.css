@@ -186,3 +186,27 @@ h2 {
     75% { transform: rotate(-5deg); }
     100% { transform: rotate(0deg); }
 }
+
+@media only screen and (max-width: 600px) {
+    .tag-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .tag-row {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .right-side-unselected {
+        animation: none;
+    }
+    .right-side-selected {
+        animation: none;
+    }
+    .container {
+        padding: 2rem;
+    }
+    h2 {
+        font-size: medium;
+    }
+}
